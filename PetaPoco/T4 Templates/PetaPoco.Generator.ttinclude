@@ -6,6 +6,7 @@ if (string.IsNullOrEmpty(RepoName)) RepoName="PetaPocoDB";
 #>
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using PetaPoco;
@@ -15,6 +16,14 @@ namespace <#=Namespace #>
 <# if (GenerateCommon) { #>
 	public partial class <#=RepoName#> : Database
 	{
+
+		public <#=RepoName#>(IDbConnection connection, string providerName) 
+			: base(connection, providerName)
+		{
+			CommonConstruct();
+		}
+
+
 		public <#=RepoName#>() 
 			: base("<#=ConnectionStringName#>")
 		{

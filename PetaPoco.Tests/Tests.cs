@@ -8,9 +8,9 @@ using PetaPoco;
 namespace PetaPoco.Tests
 {
 	[TestFixture("sqlserver")]
-	[TestFixture("sqlserverce")]
-	[TestFixture("mysql")]
-	[TestFixture("postgresql")]
+    //[TestFixture("sqlserverce")]
+    //[TestFixture("mysql")]
+    //[TestFixture("postgresql")]
 	public class Tests
 	{
 		public Tests(string connectionStringName)

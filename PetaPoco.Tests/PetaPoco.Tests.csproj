@@ -52,8 +52,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Npgsql">
-      <HintPath>..\..\..\..\..\..\Program Files\PostgreSQL\.NET Provider\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql, Version=2.0.12.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -99,6 +100,8 @@
   <ItemGroup>
     <EmbeddedResource Include="postgresql_done.sql" />
     <EmbeddedResource Include="postgresql_init.sql" />
+    <Content Include="Mono.Security.dll" />
+    <Content Include="Npgsql.dll" />
     <Content Include="petapoco.sdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

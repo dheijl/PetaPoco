@@ -66,6 +66,7 @@
     <Compile Include="Core\MultiPocoFactory.cs" />
     <Compile Include="Core\DatabaseType.cs" />
     <Compile Include="Core\StandardMapper.cs" />
+    <Compile Include="DatabaseTypes\InformixDatabaseType.cs" />
     <Compile Include="DatabaseTypes\SQLiteDatabaseType.cs" />
     <Compile Include="DatabaseTypes\OracleDatabaseType.cs" />
     <Compile Include="DatabaseTypes\PostgreSQLDatabaseType.cs" />
@@ -116,7 +117,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)\PostBuild.bat $(ConfigurationName)</PostBuildEvent>
+    <PostBuildEvent>"$(ProjectDir)PostBuild.bat" $(ConfigurationName) &gt; c:\temp\postbuild.log 2&gt;&amp;1</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
