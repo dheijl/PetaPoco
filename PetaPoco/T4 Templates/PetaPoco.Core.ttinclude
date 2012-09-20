@@ -1837,6 +1837,8 @@ public static class Inflector {
         AddSingularRule("(vert|ind)ices$", "$1ex");
         AddSingularRule("(matr)ices$", "$1ix");
         AddSingularRule("(quiz)zes$", "$1");
+		AddSingularRule("([0-9]s)$", "$1");
+		AddSingularRule("(ins)$", "$1");
 
         AddIrregularRule("person", "people");
         AddIrregularRule("man", "men");

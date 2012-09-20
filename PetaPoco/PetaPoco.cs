@@ -3065,22 +3065,23 @@ namespace PetaPoco
 				if (TypeName.StartsWith("Ifx"))
 					return Singleton<InformixDatabaseType>.Instance;
 
-				// Try again with provider name
-				if (ProviderName.IndexOf("MySql", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<MySqlDatabaseType>.Instance;
-				if (ProviderName.IndexOf("SqlServerCe", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<SqlServerCEDatabaseType>.Instance;
-				if (ProviderName.IndexOf("pgsql", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<PostgreSQLDatabaseType>.Instance;
-				if (ProviderName.IndexOf("Oracle", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<OracleDatabaseType>.Instance;
-				if (ProviderName.IndexOf("SQLite", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<SQLiteDatabaseType>.Instance;
-				if (ProviderName.IndexOf("SqlClient", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<SqlServerDatabaseType>.Instance;
-				if (ProviderName.IndexOf("IBM.Data.Informix", StringComparison.InvariantCultureIgnoreCase) >= 0)
-					return Singleton<InformixDatabaseType>.Instance;
-
+				if (!String.IsNullOrEmpty(ProviderName)) {
+					// Try again with provider name
+					if (ProviderName.IndexOf("MySql", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<MySqlDatabaseType>.Instance;
+					if (ProviderName.IndexOf("SqlServerCe", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<SqlServerCEDatabaseType>.Instance;
+					if (ProviderName.IndexOf("pgsql", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<PostgreSQLDatabaseType>.Instance;
+					if (ProviderName.IndexOf("Oracle", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<OracleDatabaseType>.Instance;
+					if (ProviderName.IndexOf("SQLite", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<SQLiteDatabaseType>.Instance;
+					if (ProviderName.IndexOf("SqlClient", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<SqlServerDatabaseType>.Instance;
+					if (ProviderName.IndexOf("IBM.Data.Informix", StringComparison.InvariantCultureIgnoreCase) >= 0)
+						return Singleton<InformixDatabaseType>.Instance;
+				}
 				// Assume SQL Server
 				return Singleton<SqlServerDatabaseType>.Instance;
 			}

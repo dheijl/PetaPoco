@@ -158,7 +158,6 @@ namespace PetaPoco.Internal
                 if (ProviderName.IndexOf("IBM.Data.Informix", StringComparison.InvariantCultureIgnoreCase) >= 0)
                     return Singleton<InformixDatabaseType>.Instance;
             }
-
             // Assume SQL Server
             return Singleton<SqlServerDatabaseType>.Instance;
         }
