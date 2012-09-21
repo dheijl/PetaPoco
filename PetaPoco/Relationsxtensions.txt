@@ -1,0 +1,31 @@
+
+http://schotime.net/blog/index.php/2011/08/21/petapoco-one-to-many-and-many-to-one/
+
+
+The extensions add two new methods to the Database class. They come with a variety of overloads for a multitude of generic arguments.
+
+FetchOneToMany<>
+FetchManyToOne<>
+This is how it works:
+
+var results1 = db.FetchOneToMany<BudgetPeriod, Expense>(x => x.BudgetPeriodId,
+        "select b.*, e.* from budgetperiods b " +
+        "   inner join expenses e on b.budgetperiodid = e.budgetperiodid");
+
+var results2 = db.FetchManyToOne<Expense, BudgetPeriod, BudgetPeriod>(x => x.ExpenseId,
+        "select e.*, b.*, b2.* from budgetperiods b " +
+        "   inner join expenses e on b.budgetperiodid = e.budgetperiodid " +
+        "   inner join budgetperiods b2 on e.budgetperiodid = b2.budgetperiodid ");
+results1 will return a List<BudgetPeriod>
+
+results2 will return a List<Expense>
+
+There are some key things to remember when using these.
+
+It is critical that the columns that you want to map into the class are in the same order you specify the generic arguments as seen in the results2 example above. eg. Expense, BP, BP –> e.*, b.*, b2.*
+The first parameter is a lamda which should refer to the primary key of the first T argument.
+Currently you can only have 1 one-to-many relation mapped and up to 3 many-to-one relations mapped in one go.
+
+Enjoy
+
+Adam
