@@ -20,3 +20,10 @@ works with "Poco"s ... "PetaPoco" seemed like a fun name!!
 
 
 See here - <http://www.toptensoftware.com/petapoco> - for full details.
+
+<hr>
+
+This fork has added Informix 7.x (IBM.Data.Informix) support to the v5 branch in the v5-Informix brach.
+
+I also included Schotime's relations extensions (http://schotime.net/blog/index.php/2011/08/21/petapoco-one-to-many-and-many-to-one/) to this branch.
+
