@@ -3,7 +3,7 @@
 	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 		<id>PetaPoco</id>
 		<title>PetaPoco - A tiny ORMish thing for your POCOs (Core + T4 Templates)</title>
-		<version>5.0.4</version>
+		<version>5.0.5</version>
 		<authors>Topten Software</authors>
 		<owners>Topten Software</owners>
 		<licenseUrl>http://www.toptensoftware.com/petapoco/license</licenseUrl>
@@ -23,6 +23,7 @@ This package includes the core PetaPoco library + T4 templates to generate POCO 
 	</metadata>
 	<files>
 		<file src="..\PetaPoco.cs" target="Content\Models" />
+		<file src="..\PetaPocoRelationExtensions.cs" target="Content\Models" />
 		<file src="..\T4 Templates\*.tt" target="Content\Models\Generated" />
 		<file src="..\T4 Templates\PetaPoco*" target="Content\Models\Generated" />
 	</files>

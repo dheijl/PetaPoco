@@ -73,6 +73,7 @@
     <Compile Include="DatabaseTypes\SqlServerDatabaseType.cs" />
     <Compile Include="DatabaseTypes\SqlServerCEDatabaseType.cs" />
     <Compile Include="DatabaseTypes\MySqlDatabaseType.cs" />
+    <Compile Include="PetaPocoRelationExtensions.cs" />
     <Compile Include="Utilities\AutoSelectHelper.cs" />
     <Compile Include="Utilities\PagingHelper.cs" />
     <Compile Include="Utilities\ParametersHelper.cs" />
@@ -114,6 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Relationsxtensions.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
