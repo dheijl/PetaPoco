@@ -108,6 +108,13 @@ namespace <#=Namespace #>
 			public static Page<T> Page(long page, long itemsPerPage, Sql sql) { return repo.Page<T>(page, itemsPerPage, sql); }
 			public static IEnumerable<T> Query(string sql, params object[] args) { return repo.Query<T>(sql, args); }
 			public static IEnumerable<T> Query(Sql sql) { return repo.Query<T>(sql); }
+			public static void FetchDetail<T2>(List<T2> details, string sql, params object[] args)
+            where T2: new() {
+				if (details != null)
+					details.Clear();
+				details = new List<T2>();
+				details = repo.Fetch<T2>(sql, args);
+			}
 <# if (TrackModifiedColumns) { #>			
 			private Dictionary<string,bool> ModifiedColumns;
 			private void OnLoaded()
