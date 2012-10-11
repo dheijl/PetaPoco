@@ -127,14 +127,15 @@ namespace <#=Namespace #>
             { 
                 if (ModifiedColumns==null)
                     return repo.Update(this); 
-
+				if (ModifiedColumns.Count == 0)
+				    return 0;
                 int retv = repo.Update(this, ModifiedColumns.Keys);
                 ModifiedColumns.Clear();
                 return retv;
             }
             public void Save() 
             { 
-                if (repo.IsNew(this))
+                if (IsNew())
                     repo.Insert(this);
                 else
                     Update();
