@@ -1818,7 +1818,7 @@ public static class Inflector {
         AddPluralRule("^(ox)$", "$1en");
         AddPluralRule("(quiz)$", "$1zes");
 
-        AddSingularRule("s$", String.Empty);
+        //AddSingularRule("s$", String.Empty); // werkt niet goed met Nederlands
         AddSingularRule("ss$", "ss");
         AddSingularRule("(n)ews$", "$1ews");
         AddSingularRule("([ti])a$", "$1um");
