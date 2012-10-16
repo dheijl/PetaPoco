@@ -1224,7 +1224,7 @@ class PostGreSqlSchemaReader : SchemaReader
             case "bool":    
                 return "bool";
 
-            case "bytea    ":    
+            case "byte":    
                 return "byte[]";
 
             case "float8":    
@@ -1234,7 +1234,7 @@ class PostGreSqlSchemaReader : SchemaReader
             case "serial4":    
                 return "int";
 
-            case "money    ":    
+            case "money":    
                 return "decimal";
 
             case "numeric":    
