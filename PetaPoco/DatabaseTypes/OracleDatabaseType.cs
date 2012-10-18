@@ -4,6 +4,7 @@
 using System;
 using System.Data;
 using PetaPoco.Internal;
+using System.Reflection;
 
 
 namespace PetaPoco.DatabaseTypes
@@ -15,10 +16,11 @@ namespace PetaPoco.DatabaseTypes
 			return ":";
 		}
 
-		public override void PreExecute(IDbCommand cmd)
-		{
-			cmd.GetType().GetProperty("BindByName").SetValue(cmd, true, null);
-		}
+    public override void PreExecute(IDbCommand cmd) {
+        PropertyInfo pi = cmd.GetType().GetProperty("BindByName");
+        if (pi != null)
+            pi.SetValue(cmd, true, null);
+    }
 
 		public override string BuildPageQuery(long skip, long take, PagingHelper.SQLParts parts, ref object[] args)
 		{
